@@ -5,3 +5,7 @@
 h1{
     text-align: center;
 }
+.clock{
+    display: flex;
+    justify-content: center;
+}
