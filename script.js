@@ -31,11 +31,11 @@ let player1 = new Hero ()
 
     class Alien {
         constructor(){
-            for (let i = 0; i < 6; i++) {
+    
          this.hull= Math.floor(Math.random() * 4) + 3;
          this.firepower= Math.floor(Math.random() * 3) + 2;
          this.accuracy= (Math.floor(Math.random() * 3) + 6) /10;
-            }
+
      }  
     attack(hero) {
         let ranNum = Math.random();
@@ -73,16 +73,11 @@ let battle = (hero, alien) => {
 }
 const button= document.querySelector(".Getem")
 button.addEventListener("click", e => {
-    battle(player1, alien1)
+    for (const alien of aliengroup.slice()) {
+         battle (player1, alien)
+         aliengroup.shift()
+         console.log(aliengroup)
+    }
 })
-    
-
-// const showRound= () => {
-    
-// }
-// showRound()
-
-// const displayHeroinfo= () => {
 
 
-// }
