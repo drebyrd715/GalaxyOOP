@@ -75,23 +75,24 @@ const switchAlien= () =>{
 
 let round = 0;
 
-const changeRound = () =>{
+let changeRound = () =>{
     round += 1;
 }
+// changeRound()
 
-const showRound = () =>{
+let showRound = () =>{
     let gameround = document.querySelector(".roundClock");
     gameround.innerHTML = round;
 };
 showRound();
 
-const displayshipInfo = () =>{
-    player1.innerHTML = ussAssembly.hull;
-};
+// const displayPlayerInfo = () =>{
+//     player1.innerHTML = ussAssembly.hull;
+// };
 
-const displayenemyInfo = () =>{
-    player1.innerHTML = ussAssembly.hull;
-};
+// const displayEnemyInfo = () =>{
+//     player1.innerHTML = ussAssembly.hull;
+// };
 
 let popup = document.querySelector("#popup");
 
@@ -102,27 +103,22 @@ function closePopup() {
 popup.classList.remove("open-popup");
 }
  
-const playerstats= document.querySelector("#playerStats");
-playerstats.innerText= `Player Firepower ${player1.firepower}\n Alien Health ${player1.hull}`
+let playerstats= document.querySelector("#playerStats");
+playerstats.innerText= `Player Firepower ${player1.firepower}\n Player Health ${player1.hull}`
 
-const enemystats= document.querySelector("#enemyStats");
+let enemystats= document.querySelector("#enemyStats");
 enemystats.innerText= `Alien Firepower ${currentAlien.firepower}\n Alien Health ${currentAlien.hull}`
 
 
 
-
-        
-
-
-
-const battle = (hero, alien) => {
+let battle = (hero, alien) => {
     while (player1.hull > 0 && alien.hull > 0) {
         player1.attack(currentAlien);
          if (currentAlien.hull > 0) {
              currentAlien.attack(player1);
         } else {
             switchAlien()
-        }
+        }   
     }
 }
 const button= document.querySelector(".Getem")
