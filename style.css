@@ -37,12 +37,14 @@ h1{
 }
 
 .namebox{
-    border: 1px solid black;
-    width: 25vw;
-    height: 10vh;
+    border: solid black;
+    width: 28vw;
+    height: 5vh;
     display: flex;
     justify-content: center;
     align-items: 2em;
+    font-size: 24px;
+    font-family: sans-serif;
 }
 
 .enemyImage{
@@ -56,10 +58,14 @@ height: 30vh;
 }
 
 #playerStats{
-    transform: translateY(75px);
+    transform: translateY(12px);
 border: solid red;
+font-size: 24px;
+font-family: sans-serif;
 }
 
 #enemyStats{
 border: solid green;
+font-size: 24px;
+font-family: sans-serif;
 }
