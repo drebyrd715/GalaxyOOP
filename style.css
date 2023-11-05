@@ -1,39 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
 .BattleField{
-     display: flex;
+    width: 100%;
+    height: 100%;
+    display: flex;
     justify-content: space-evenly; 
 }
 
 .roundClock{
-position: fixed;
+    position: fixed;
+    padding: 10px 30px;
+    background: blue;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 30px;
+    height: 50px;
+    transform: translateX(-40px);
+    transform: translateY(10px);
+    color: white;
+/* position: fixed;
 transform: translateX(-40px);
-transform: translateY(-18px);
+transform: translateY(10px);
 padding: 10px;
 background-color: blue;
 color:white;
 height: 20px;
-border-radius: 40px;
+border-radius: 40px; */
 }
 
 .Getem{
-margin: 5px;
+    padding: 10px 30px;
+    background: blue;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 30px;
+    height: 50px;
+    transform: translateY(70px);
+    color: white;
+/* margin: 5px;
 transform: translateY(25px);
 padding: 10px;
 background-color: blue;
 color:white;
 height: 20px;
 border-radius: 40px;
-text-align: center;
+text-align: center; */
 }
 
 h1{
     display: flex;
     justify-content: center;
     text-align: center;
-}
-
-.clock{
-    display: flex;
-    justify-content: center;
 }
 
 .namebox{
@@ -70,13 +98,74 @@ font-size: 24px;
 font-family: sans-serif;
 }
 
-.button{
- margin: 5px;
+.btn{
+    padding: 10px 30px;
+    background: blue;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 30px;
+    height: 50px;
+    transform: translateY(68px);
+    color: white;
+/* margin: 5px;
 transform: translateY(25px);
 padding: 10px;
 background-color: blue;
 color:white;
 height: 20px;
 border-radius: 40px;
-text-align: center;
+text-align: center; */
 }
+
+.popup{
+    width: 400px;
+    background: grey;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 30px 30px;  
+    visibility: hidden;
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close-popup{
+    visibility: hidden;
+}
+
+.popup img{
+    width: 100px;
+    box-shadow: 0 2px 5px;
+}
+
+.popup h2{
+    font-size: 22px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+.popup button{
+    width: 50%;
+    margin-top: 30px;
+    padding: 10px 0;
+    background: green;
+    color: white;
+    border: 0;
+    outline: none;
+    border-radius: 60px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px;
+}
+
+
+

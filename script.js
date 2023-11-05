@@ -85,13 +85,22 @@ const showRound = () =>{
 };
 showRound();
 
-const displayshipInfo = () =>{
-    player1.innerHTML = ussAssembly.hull;
-};
+// const displayshipInfo = () =>{
+//     player1.innerHTML = ussAssembly.hull;
+// };
 
-const displayenemyInfo = () =>{
-    player1.innerHTML = ussAssembly.hull;
-};
+// const displayenemyInfo = () =>{
+//     player1.innerHTML = ussAssembly.hull;
+// };
+
+let popup = document.querySelector("#popup");
+
+function openPopup() {
+popup.classList.add("open-popup");
+}
+function closePopup() {
+popup.classList.remove("open-popup");
+}
  
 const playerstats= document.querySelector("#playerStats");
 playerstats.innerText= `Player Firepower ${player1.firepower}\n Alien Health ${player1.hull}`
@@ -123,7 +132,7 @@ button.addEventListener("click", e => {
     }
 })
 
-const retreat = document.querySelector(".button")
+const retreat = document.querySelector(".buttin")
 retreat.addEventListener("click",() =>{
 retreat.textContent = "GAME IS OVER"
 })

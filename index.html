@@ -25,7 +25,14 @@
 
             <div class= "roundClock"></div>
             <button class ="Getem">ATTACK NOW!!</button>
-            <button class ="button">RETREAT!!</button> 
+            <button type= "Retreat" class ="btn" onclick="openPopup()">Retreat</button> 
+            <div class="popup" id="popup">
+                <img src="popmsg.png">
+                <h2>You have destroyed an alien ship</h2>
+                <p>Would You Like To Retreat?</p>
+                <button type="button" onclick="closePopup()">NEVER!!</button>
+                <button type="buttin" onclick="closePopup()">Yes!!</button>
+            </div>
         
 
             <div class= "AlienView right">
@@ -41,17 +48,6 @@
       
       
       
-      
-      
-        <!-- <div class="playercontainer">
-            <div class="playerone">
-             <div class="playertwo">
-        </div>
-        -->
-
-
-
-
 
         <script src="script.js" async defer></script>
     </body>
