@@ -66,12 +66,11 @@ const setRandomNum = (min,max)=>{
 
 let count = 0;
 let aliengroup = [alien, alien2, alien3, alien4, alien5, alien6]
-// for (i = 0; i < 6; i++) {
-//      aliengroup.push(new Alien('alien${i}',0, 0, 0))
-// }
+
 let currentAlien = aliengroup[count]
 const switchAlien= () =>{
-    count++
+        count++
+        currentAlien= aliengroup[count]
 }
 
 let round = 0;
@@ -119,17 +118,15 @@ const battle = (hero, alien) => {
 }
 const button= document.querySelector(".Getem")
 button.addEventListener("click", e => {
-    for (const alien of aliengroup.slice()) {
-         battle (player1, currentAlien)
-         aliengroup.shift()
-         console.log(aliengroup)
+    for (const alien of aliengroup){
+    battle (player1, currentAlien)
     }
 })
 
-// const retreat = document.querySelector("button")
-// retreat.addEventListener("click",() =>{
-// retreat.textContent = "GAME IS OVER"
-// })
+const retreat = document.querySelector(".button")
+retreat.addEventListener("click",() =>{
+retreat.textContent = "GAME IS OVER"
+})
 
 
 

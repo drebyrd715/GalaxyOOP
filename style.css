@@ -69,3 +69,14 @@ border: solid green;
 font-size: 24px;
 font-family: sans-serif;
 }
+
+.button{
+ margin: 5px;
+transform: translateY(25px);
+padding: 10px;
+background-color: blue;
+color:white;
+height: 20px;
+border-radius: 40px;
+text-align: center;
+}
