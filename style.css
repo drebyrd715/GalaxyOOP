@@ -1,11 +1,65 @@
 .BattleField{
-    display: flex;
-    justify-content: space-evenly;
+     display: flex;
+    justify-content: space-evenly; 
 }
+
+.roundClock{
+position: fixed;
+transform: translateX(-40px);
+transform: translateY(-18px);
+padding: 10px;
+background-color: blue;
+color:white;
+height: 20px;
+border-radius: 40px;
+}
+
+.Getem{
+margin: 5px;
+transform: translateY(25px);
+padding: 10px;
+background-color: blue;
+color:white;
+height: 20px;
+border-radius: 40px;
+text-align: center;
+}
+
 h1{
+    display: flex;
+    justify-content: center;
     text-align: center;
 }
+
 .clock{
     display: flex;
     justify-content: center;
+}
+
+.namebox{
+    border: 1px solid black;
+    width: 25vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: 2em;
+}
+
+.enemyImage{
+width: 30vw;
+height: 35vh;
+}
+
+.playerImage{
+width: 20vw;
+height: 30vh;
+}
+
+#playerStats{
+    transform: translateY(75px);
+border: solid red;
+}
+
+#enemyStats{
+border: solid green;
 }

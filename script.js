@@ -36,16 +36,16 @@ let player1 = new Hero ("hero1", 20, 5, .7)
             let ranNum = Math.random();
             console.log(`Accuracy is ${ranNum}`);
             if (ranNum < this.accuracy) {
-                console.log(`Hit hero ship!`);
-                Hero.hull = Hero.hull - this.firepower;
-                console.log(`alien has ${Hero.hull} hull points left.`);
-                if (Hero.hull <= 0) {
+                console.log(`Hit My ship!`);
+                player1.hull = player1.hull - this.firepower;
+                console.log(`hero has ${player1.hull} hull points left.`);
+                if (player1.hull <= 0) {
     
-                    console.log(`Destoyed Hero Ship!!`);
+                    console.log(`Destoyed My Ship!!`);
     
                 }
             } else {
-                console.log(`Dodged alien missles !`);
+                console.log(`Dodged alien missles!`);
             }
         }
     }
@@ -67,7 +67,7 @@ const setRandomNum = (min,max)=>{
 let count = 0;
 let aliengroup = [alien, alien2, alien3, alien4, alien5, alien6]
 // for (i = 0; i < 6; i++) {
-//     // aliengroup.push(new Alien('alien${i}',0, 0, 0))
+//      aliengroup.push(new Alien('alien${i}',0, 0, 0))
 // }
 let currentAlien = aliengroup[count]
 const switchAlien= () =>{
@@ -93,6 +93,12 @@ const displayshipInfo = () =>{
 const displayenemyInfo = () =>{
     player1.innerHTML = ussAssembly.hull;
 };
+ 
+const playerstats= document.querySelector("#playerStats");
+playerstats.innerText= `Player Firepower ${player1.firepower}\n Alien Health ${player1.hull}`
+
+const enemystats= document.querySelector("#enemyStats");
+enemystats.innerText= `Alien Firepower ${currentAlien.firepower}\n Alien Health ${currentAlien.hull}`
 
 
 
@@ -101,16 +107,11 @@ const displayenemyInfo = () =>{
 
 
 
-
-
-
-
-
 const battle = (hero, alien) => {
     while (player1.hull > 0 && alien.hull > 0) {
         player1.attack(currentAlien);
          if (currentAlien.hull > 0) {
-             currentAlien.attack(hero);
+             currentAlien.attack(player1);
         } else {
             switchAlien()
         }
