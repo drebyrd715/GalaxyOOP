@@ -85,13 +85,13 @@ const showRound = () =>{
 };
 showRound();
 
-// const displayshipInfo = () =>{
-//     player1.innerHTML = ussAssembly.hull;
-// };
+const displayshipInfo = () =>{
+    player1.innerHTML = ussAssembly.hull;
+};
 
-// const displayenemyInfo = () =>{
-//     player1.innerHTML = ussAssembly.hull;
-// };
+const displayenemyInfo = () =>{
+    player1.innerHTML = ussAssembly.hull;
+};
 
 let popup = document.querySelector("#popup");
 
@@ -132,10 +132,10 @@ button.addEventListener("click", e => {
     }
 })
 
-const retreat = document.querySelector(".buttin")
-retreat.addEventListener("click",() =>{
-retreat.textContent = "GAME IS OVER"
-})
+// const retreat = document.querySelector(".buttin")
+// retreat.addEventListener("click",() =>{
+// retreat.textContent = "GAME IS OVER"
+// })
 
 
 

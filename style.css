@@ -78,15 +78,17 @@ h1{
 .enemyImage{
 width: 30vw;
 height: 35vh;
+transform: translateY(130px);
 }
 
 .playerImage{
 width: 20vw;
 height: 30vh;
+transform: translateY(120px);
 }
 
 #playerStats{
-    transform: translateY(12px);
+transform: translateY(205px);
 border: solid red;
 font-size: 24px;
 font-family: sans-serif;
@@ -96,6 +98,7 @@ font-family: sans-serif;
 border: solid green;
 font-size: 24px;
 font-family: sans-serif;
+transform: translateY(180px);
 }
 
 .btn{
