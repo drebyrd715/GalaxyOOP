@@ -30,7 +30,7 @@ class Alien {
   }
   attack() {
     let ranNum = Math.random();
-    FighterHub(`Enemy Fires back at Player`);
+    FighterHub(`Enemy Fires back at You`);
     if (ranNum < this.accuracy) {
       FighterHub(`Enemy Hit My ship!`);
       player1.hull = player1.hull - this.firepower;
