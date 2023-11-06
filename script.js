@@ -1,5 +1,3 @@
-
-
 class Hero {
   constructor(name, hull, firepower, accuracy) {
     this.name = name;
@@ -9,16 +7,16 @@ class Hero {
   }
   attack() {
     let ranNum = Math.random();
-    console.log(`Accuracy is ${ranNum}`);
+    FighterHub(`Player Fires at Enemy`);
     if (ranNum < this.accuracy) {
-      console.log(`Hit enemy ship!`);
+      FighterHub(`You Hit Enemy Ship!`);
       currentAlien.hull = currentAlien.hull - this.firepower;
-      console.log(`currentAlien has ${currentAlien.hull} hull points left.`);
+      FighterHub(`currentAlien has ${currentAlien.hull} hull points left.`);
       if (currentAlien.hull <= 0) {
-        console.log(`Alien ship is NoMore!!`);
+        FighterHub(`The Enemy Ship is NoMore!!`);
       }
     } else {
-      console.log(`We missed enemy!`);
+      FighterHub(`We missed the enemy!`);
     }
   }
 }
@@ -32,16 +30,16 @@ class Alien {
   }
   attack() {
     let ranNum = Math.random();
-    console.log(`Accuracy is ${ranNum}`);
+    FighterHub(`Enemy Fires back at Player`);
     if (ranNum < this.accuracy) {
-      console.log(`Hit My ship!`);
+      FighterHub(`Enemy Hit My ship!`);
       player1.hull = player1.hull - this.firepower;
-      console.log(`hero has ${player1.hull} hull points left.`);
+      FighterHub(`Player has ${player1.hull} hull points left.`);
       if (player1.hull <= 0) {
-        console.log(`Destoyed My Ship!!`);
+        FighterHub(`Enemy Destoyed My Ship!!`);
       }
     } else {
-      console.log(`Dodged alien missles!`);
+      FighterHub(`You Dodged Enemy Missles!`);
     }
   }
 }
@@ -100,15 +98,26 @@ playerstats.innerText = `Player Firepower ${player1.firepower}\n Player Health $
 let enemystats = document.querySelector("#enemyStats");
 enemystats.innerText = `Alien Firepower ${currentAlien.firepower}\n Alien Health ${currentAlien.hull}`;
 
+const Fighterinfo = document.querySelector(".FighterHub");
+
+function FighterHub(newtext) {
+  const text = document.createElement("p");
+  text.classList.add("updates")
+  text.textContent = newtext;
+  Fighterinfo.appendChild(text);
+}
+
 const battle = () => {
   if (player1.hull > 0 && currentAlien.hull > 0) {
     player1.attack();
     if (currentAlien.hull < 1) {
       count++;
       currentAlien = aliengroup[count];
-      console.log(currentAlien.name);
+      enemystats.innerText = `Alien Firepower ${currentAlien.firepower}\n Alien Health ${currentAlien.hull}`;
+      FighterHub(currentAlien.name);
     } else {
       currentAlien.attack();
+      playerstats.innerText = `Player Firepower ${player1.firepower}\n Player Health ${player1.hull}`;
     }
   }
 };
