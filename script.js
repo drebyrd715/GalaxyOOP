@@ -62,14 +62,19 @@ const setRandomNum = (min,max)=>{
  let alien6 = new Alien("Majin Buu")
 
 
-let count = 0;
-let aliengroup = [alien, alien2, alien3, alien4, alien5]
+let aliengroup = [alien, alien2, alien3, alien4, alien5, alien6]
 
-let currentAlien = aliengroup[count]
-const switchAlien= (array) =>{
-        count++
-        currentAlien= array[count]
-}
+let currentAlien = aliengroup[0]
+
+const switchalien = function () {
+    if (aliengroup.length > 0) {
+        aliengroup.shift()
+        console.log(currentAlien.name)
+        } 
+    } 
+        if (aliengroup.length === 0) {
+            winnerwinner()
+        }
 
 let round = 0;
 
@@ -99,19 +104,17 @@ playerstats.innerText= `Player Firepower ${player1.firepower}\n Player Health ${
 let enemystats= document.querySelector("#enemyStats");
 enemystats.innerText= `Alien Firepower ${currentAlien.firepower}\n Alien Health ${currentAlien.hull}`
 
-const battle = (player1, array) => {
-    if (player1.hull > 0 && currentAlien.hull > 0) {
-      player1.attack(currentAlien);
-      if (currentAlien.hull < 1) {
-        console.log("alien has been destroyed");
-        switchAlien(array)
-        console.log(currentAlien.name);
-        return;
-      } else {
-        currentAlien.attack();
-      }
+const battle = () => {
+if (player1.hull > 0 && currentAlien.hull > 0) {
+ player1.attack(currentAlien);
+ if (currentAlien.hull < 1) {
+ switchalien()
+    console.log(currentAlien.name);
+} else {
+    currentAlien.attack();
+        }
     }
-  };
+};
   const button = document.querySelector(".Getem");
    
   button.addEventListener("click", (e) => {
