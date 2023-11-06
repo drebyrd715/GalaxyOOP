@@ -61,20 +61,19 @@ const setRandomNum = (min,max)=>{
  let alien5 = new Alien("Frieza")
  let alien6 = new Alien("Majin Buu")
 
+let count = 0
 
 let aliengroup = [alien, alien2, alien3, alien4, alien5, alien6]
 
-let currentAlien = aliengroup[0]
+let currentAlien = aliengroup[count]
 
 const switchalien = function () {
     if (aliengroup.length > 0) {
-        aliengroup.shift()
-        console.log(currentAlien.name)
-        } 
-    } 
-        if (aliengroup.length === 0) {
-            winnerwinner()
-        }
+    aliengroup.shift()
+     } 
+} 
+    if (aliengroup.length === 0) {
+ }
 
 let round = 0;
 
@@ -108,6 +107,8 @@ const battle = () => {
 if (player1.hull > 0 && currentAlien.hull > 0) {
  player1.attack(currentAlien);
  if (currentAlien.hull < 1) {
+count++;
+currentAlien = aliengroup[count];
  switchalien()
     console.log(currentAlien.name);
 } else {
@@ -115,6 +116,7 @@ if (player1.hull > 0 && currentAlien.hull > 0) {
         }
     }
 };
+
   const button = document.querySelector(".Getem");
    
   button.addEventListener("click", (e) => {
